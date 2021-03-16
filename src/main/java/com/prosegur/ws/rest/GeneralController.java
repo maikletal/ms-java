@@ -145,10 +145,12 @@ public class GeneralController extends CoreController {
     public ResponseEntity<Object> checkLocation() {
         logger.info("Service in construction...");
         logger.info("Location is: " + this.param);
+        String result = "{\"status\":\"" + this.param + "\"}";
         if (this.param == null) {
-            return new ResponseEntity<>("location_error", HttpStatus.BAD_REQUEST);
+            result = "{\"status\":\"location_error\"}";
+            return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         } else  {
-            return new ResponseEntity<>(this.param, HttpStatus.OK);
+            return new ResponseEntity<>(result, HttpStatus.OK);
         }
 
     }

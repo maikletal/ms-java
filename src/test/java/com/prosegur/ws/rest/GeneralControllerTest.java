@@ -71,7 +71,7 @@ public class GeneralControllerTest {
     public void checkLocation() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/v1/general/example").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("controlador_test"));
+                .andExpect(content().string("{\"status\":\"controlador_test\"}"));
     }
 
 }

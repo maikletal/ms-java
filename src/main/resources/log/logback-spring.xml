@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="3 seconds">
+	<include
+		resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<!-- Properties Section -->
+	<springProperty name="filename" scope="context"
+		source="spring.application.name" />
+	<springProperty name="logLevelApp" scope="context"
+		source="logging.level.com.prosegur" />
+	<springProperty name="logLevelSpring" scope="context"
+		source="logging.level.org.springframework" />
+	<springProperty name="projectVersion" scope="context"
+		source="spring.project.version" />
+
+	<!-- Spring Profiles Section -->
+
+	<springProfile name="dev">
+		<appender name="FILE"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>/usr/local/log/dev/${filename}.${projectVersion}-dev.log</file>
+			<encoder
+				class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+				<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36}
+					-
+					%msg%n
+				</Pattern>
+			</encoder>
+			<rollingPolicy
+				class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+				<FileNamePattern>/usr/local/log/dev/${filename}.${projectVersion}-dev.%i.log.zip</FileNamePattern>
+				<MinIndex>1</MinIndex>
+				<MaxIndex>10</MaxIndex>
+			</rollingPolicy>
+			<triggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+				<MaxFileSize>2MB</MaxFileSize>
+			</triggeringPolicy>
+		</appender>
+	</springProfile>
+
+	<springProfile name="prod">
+		<appender name="FILE"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>/usr/local/log/prod/${filename}.${projectVersion}-prod.log</file>
+			<encoder
+				class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+				<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36}
+					-
+					%msg%n
+				</Pattern>
+			</encoder>
+			<rollingPolicy
+				class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+				<FileNamePattern>/usr/local/log/prod/${filename}.${projectVersion}-prod.%i.log.zip</FileNamePattern>
+				<MinIndex>1</MinIndex>
+				<MaxIndex>10</MaxIndex>
+			</rollingPolicy>
+			<triggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+				<MaxFileSize>2MB</MaxFileSize>
+			</triggeringPolicy>
+		</appender>
+	</springProfile>
+
+	<!--Local -->
+	<springProfile name="local">
+		<appender name="FILE"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>/usr/local/log/local/${filename}.${projectVersion}-local.log</file>
+			<encoder
+				class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+				<charset>UTF-8</charset>
+				<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level [%thread]
+					%class{36}:%L -
+					%msg%n
+				</Pattern>
+			</encoder>
+			<rollingPolicy
+				class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+				<FileNamePattern>/usr/local/log/local/${filename}.${projectVersion}-local.%i.log.zip</FileNamePattern>
+				<MinIndex>1</MinIndex>
+				<MaxIndex>10</MaxIndex>
+			</rollingPolicy>
+			<triggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+				<MaxFileSize>2MB</MaxFileSize>
+			</triggeringPolicy>
+		</appender>
+
+	</springProfile>
+
+	<!-- Loggers Section -->
+	<logger name="org.springframework" level="${logLevelSpring}">
+	</logger>
+	<logger name="com.prosegur" level="${logLevelApp}">
+		<appender-ref ref="FILE" />
+	</logger>
+
+</configuration>

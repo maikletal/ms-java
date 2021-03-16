@@ -1,0 +1,132 @@
+{"properties": [
+  {
+    "name": "spring.project.version",
+    "type": "java.lang.String",
+    "description": "Project version."
+  },
+  {
+    "name": "clean.indexes",
+    "type": "java.lang.String",
+    "description": "List of elasticsearch indexes to be cleaned by default all."
+  },
+  {
+    "name": "clean.indexes-keep-days",
+    "type": "java.lang.String",
+    "description": "Days to retain data on indexes by default 365 days."
+  },
+  {
+    "name": "clean.every-days",
+    "type": "java.lang.String",
+    "description": "Days to run the cleaner by default every 1 day."
+  },
+  {
+    "name": "clean.at-hour",
+    "type": "java.lang.String",
+    "description": "Start hour to run the cleaner by default at 0 hours."
+  },
+  {
+    "name": "clean.at-minute",
+    "type": "java.lang.String",
+    "description": "Start minutes to run the cleaner by default at 0 minutes."
+  },
+  {
+    "name": "encrypt.secret-key",
+    "type": "java.lang.String",
+    "description": "A 128 bit secret key for encryptation."
+  },
+  {
+    "name": "encrypt.indexes",
+    "type": "java.lang.String",
+    "description": "List of elasticsearch indexes to be encrypted by default ccaa_events."
+  },
+  {
+    "name": "encrypt.attributes",
+    "type": "java.lang.String",
+    "description": "List of attributes to be encrypted by default identification, person, licensePlate, cardCode and description."
+  },
+  {
+    "name": "encrypt.ignore-days",
+    "type": "java.lang.String",
+    "description": "Days to not encrypt data on indexes by default 30 days."
+  },
+  {
+    "name": "encrypt.every-days",
+    "type": "java.lang.String",
+    "description": "Days to run the encryptation process by default every 1 day."
+  },
+  {
+    "name": "encrypt.at-hour",
+    "type": "java.lang.String",
+    "description": "Start hour to run the encryptation process by default at 0 hours."
+  },
+  {
+    "name": "encrypt.at-minute",
+    "type": "java.lang.String",
+    "description": "Start minutes to run the encryptation process by default at 0 minutes."
+  },
+  {
+    "name": "elastic.host",
+    "type": "java.lang.String",
+    "description": "A description for 'elastic.host'"
+  },
+  {
+    "name": "elastic.port.primary",
+    "type": "java.lang.String",
+    "description": "A description for 'elastic.port.primary'"
+  },
+  {
+    "name": "elastic.port.secondary",
+    "type": "java.lang.String",
+    "description": "A description for 'elastic.port.secondary'"
+  },
+  {
+    "name": "elastic.http.mode",
+    "type": "java.lang.String",
+    "description": "A description for 'elastic.http.mode'"
+  },
+  {
+    "name": "custom.fiware.service",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.fiware.service'"
+  },
+  {
+    "name": "custom.fiware.config.service",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.fiware.config.service'"
+  },
+  {
+    "name": "custom.fiware.rules.service",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.fiware.rules.service'"
+  },
+  {
+    "name": "custom.fiware.path",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.fiware.path'"
+  },
+  {
+    "name": "custom.orion.host",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.orion.host'"
+  },
+  {
+    "name": "custom.orion.speed.host",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.orion.speed.host'"
+  },
+  {
+    "name": "custom.iotagent-json.host",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.iotagent-json.host'"
+  },
+  {
+    "name": "custom.ws.url",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.ws.url'"
+  },
+  {
+    "name": "custom.rule.engine.url",
+    "type": "java.lang.String",
+    "description": "A description for 'custom.rule.engine.url'"
+  }
+]}

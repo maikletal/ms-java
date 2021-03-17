@@ -1,5 +1,5 @@
 # Se recomienda crear un repositorio de imágenes base propio en lugar de usar imágenes oficiales
-FROM openjdk:11
+FROM openjdk:11-jre-slim
 LABEL maintainer=Arquitectura
 VOLUME /tmp
 ADD ./target/msjava.jar app.jar

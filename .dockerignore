@@ -1,0 +1,15 @@
+.gitignore
+/.idea
+deployment.yml
+*.iml
+pom.xml
+README.md
+/src
+/target/apidocs
+/target/classes
+/target/generated*
+/target/javadoc*
+/target/maven*
+/target/surfire*
+/target/test*
+/target/msjava-*
